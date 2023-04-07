@@ -90,3 +90,37 @@ int main()
     printf("%.2f", result);
     return 0;
 }
+git push –u origin <area-perimeter>
+//tmeraj22
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float calculate_perimeter(float r) 
+{
+    float perimeter;
+    perimeter = 2 * 3.14159 * r;
+    return perimeter;
+}
+
+float calculate_area(float r) 
+{
+    float area;
+    area = 3.14159 * r * r;
+    return area;
+}
+
+
+int main() 
+{
+    float r, area, perimeter;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &r);
+    perimeter = calculate_perimeter(r);
+    area = calculate_area(r);
+    printf("Perimeter of the circle is %.2f cm.\n", perimeter);
+    printf("Area of the circle is %.2f cm^2.\n", area);
+
+
+    return 0;
+}
