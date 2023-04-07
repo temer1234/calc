@@ -1,0 +1,92 @@
+//tmeraj22
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double sum(float nr1, float nr2) 
+{
+    return (double) nr1 + nr2;
+}
+
+double subtraction(float nr1, float nr2) 
+{
+    return nr1 - nr2;
+}
+
+double multiplication(float nr1, float nr2) 
+{
+    return (double) (nr1 * nr2);
+}
+
+double division(float nr1, float nr2) 
+{
+    if (nr2 == 0) 
+    {
+        printf("Error, enter a number different from: ");
+         scanf ("%f",&nr2);
+    }
+       return   (double)nr1/nr2;;
+}
+
+double squareroot(float nr1) 
+{
+    return sqrt(nr1);
+}
+
+double power(float nr1, float nr2) 
+{
+    double x = 1;
+    for (int i = 1; i <= nr2; i++) 
+    {
+        x = x * nr1;
+    }
+    return x;
+}
+
+int main() 
+{
+    char opp;
+    float nr1, nr2 = 0, result;
+    printf("Enter the first number: ");
+    scanf("%f", &nr1);
+    printf("Enter the operator (+,-,*,/,^,s(sqrt)): ");
+    scanf(" %c", &opp);
+    if (opp == '^') 
+    {
+        printf("Enter the power: ");
+        scanf("%f", &nr2);
+        result = power(nr1, nr2);
+    } 
+    else if (opp == 's') 
+    {
+        result = squareroot(nr1);
+    } 
+    else 
+    {
+        printf("Enter the second number: ");
+        scanf("%f", &nr2);
+        if (opp == '+') 
+        {
+            result = sum(nr1, nr2);
+        } 
+        else if (opp == '-') 
+        {
+            result = subtraction(nr1, nr2);
+        } 
+        else if (opp == '*') 
+        {
+            result = multiplication(nr1, nr2);
+        } 
+        else if (opp == '/') 
+        {
+            result = division(nr1, nr2);
+        } 
+        else 
+        {
+            printf("Error: operator not recognized.");
+            exit(1);
+        }
+    }
+    printf("%.2f", result);
+    return 0;
+}
